@@ -10,7 +10,7 @@
 	"MAP: Original Battlegrounds"
 
 #define MIN_PLAYERS \
-	1
+	7
 	
 #define COUNT_DOWN \
 	30
@@ -427,7 +427,7 @@ public OnGameModeUpdate()
 
 			gameCountDown++;
 
-			if (Iter_Count(PLAYERS) < 1)
+			if (Iter_Count(PLAYERS) <= 1)
 			{
 				gameState = GAME_STATE_FINISHED;
 
