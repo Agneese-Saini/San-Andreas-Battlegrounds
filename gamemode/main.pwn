@@ -1136,6 +1136,107 @@ Dialog:FORGOT_USERNAME(playerid, response, listitem, inputtext[])
 
 // commands
 
+CMD:kick(playerid, params[])
+{
+	if (GetPVarInt(playerid, "AdminLevel") < 1)
+	{
+		SendClientMessage(playerid, COLOR_TOMATO, "You are not allowed to use this command.");
+		return 1;
+	}
+
+	new targetid;
+
+	if(sscanf(params, "u", targetid))
+	{ 
+		SendClientMessage(playerid, COLOR_WHITE, "USAGE: {FFFFFF}/kick [id]");
+		return 1;
+	}
+
+	if(!IsPlayerConnected(targetid) || targetid == INVALID_PLAYER_ID) 
+	{
+		SendClientMessage(playerid, COLOR_TOMATO, "The player is no more connected.");
+		return 1;
+	}
+
+	if(GetPVarInt(targetid, "AdminLevel") > GetPVarInt(playerid, "AdminLevel"))
+	{
+		SendClientMessage(playerid, COLOR_TOMATO, "You are not allowed to use this command.");
+		return 1;
+	}
+
+	Kick(targetid);
+
+	return 1;
+}
+
+CMD:freeze(playerid, params[])
+{
+	if (GetPVarInt(playerid, "AdminLevel") < 1)
+	{
+		SendClientMessage(playerid, COLOR_TOMATO, "You are not allowed to use this command.");
+		return 1;
+	}
+
+	new targetid;
+
+	if(sscanf(params, "u", targetid))
+	{ 
+		SendClientMessage(playerid, COLOR_WHITE, "USAGE: {FFFFFF}/freeze [id]");
+		return 1;
+	}
+
+	if(!IsPlayerConnected(targetid) || targetid == INVALID_PLAYER_ID) 
+	{
+		SendClientMessage(playerid, COLOR_TOMATO, "The player is no more connected.");
+		return 1;
+	}
+
+	if(GetPVarInt(targetid, "AdminLevel") > GetPVarInt(playerid, "AdminLevel"))
+	{
+		SendClientMessage(playerid, COLOR_TOMATO, "You are not allowed to use this command.");
+		return 1;
+	}
+
+	TogglePlayerControllable(targetid, false);
+
+	return 1;
+
+}
+
+CMD:unfreeze(playerid, params[])
+{
+	if (GetPVarInt(playerid, "AdminLevel") < 1)
+	{
+		SendClientMessage(playerid, COLOR_TOMATO, "You are not allowed to use this command.");
+		return 1;
+	}
+
+	new targetid;
+
+	if(sscanf(params, "u", targetid))
+	{ 
+		SendClientMessage(playerid, COLOR_WHITE, "USAGE: {FFFFFF}/unfreeze [id]");
+		return 1;
+	}
+
+	if(!IsPlayerConnected(targetid) || targetid == INVALID_PLAYER_ID) 
+	{
+		SendClientMessage(playerid, COLOR_WHITE, "The player is no more connected.");
+		return 1;
+	}
+
+	if(GetPVarInt(targetid, "AdminLevel") > GetPVarInt(playerid, "AdminLevel"))
+	{
+		SendClientMessage(playerid, COLOR_TOMATO, "You are not allowed to use this command.");
+		return 1;
+	}
+
+	TogglePlayerControllable(targetid, true);
+
+	return 1;
+
+}
+
 CMD:changepass(playerid, params[])
 {
 	if (playerData[playerid][E_PLAYER_DATA_SQLID] != 1)
