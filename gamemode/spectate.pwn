@@ -1,6 +1,6 @@
 #include <a_samp>
 
-#include "../include/foreach.inc"
+#include <YSI\y_iterate>
 
 new Text:spectateTextDraw[5];
 new PlayerText:spectatePlayerTextDraw[MAX_PLAYERS];

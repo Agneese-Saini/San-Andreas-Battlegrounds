@@ -1,8 +1,8 @@
 #include <a_samp>
 
-#include "../include/fader.inc"
-#include "../include/streamer.inc"
-#include "../include/foreach.inc"
+#include <fader>
+#include <streamer>
+#include <YSI\y_iterate>
 
 #define FADE_FROM_COLOR \
 	((0xA30000FF & ~0xFF) | 25)

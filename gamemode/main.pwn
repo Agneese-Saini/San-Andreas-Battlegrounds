@@ -22,13 +22,13 @@ main()
 
 // priority libraries
 
-//#include "../include/lagcomp.inc"
+//#include <lagcomp>
 
 #define ZMSG_HYPHEN_START \
 	""
 #define ZMSG_HYPHEN_END \
 	"-"
-#include "../include/zmessage.inc"
+#include <zmessage>
 
 // gamemode dependencies
 
@@ -36,12 +36,12 @@ main()
 
 // other libraries (no placement priorities)
 
-#include "../include/sscanf2.inc"
-#include "../include/streamer.inc"
+#include <sscanf2>
+#include <streamer>
 
-#include "../include/zcmd.inc"
-#include "../include/easydialog.inc"
-#include "../include/kickbanfix.inc"
+#include <zcmd>
+#include <easydialog>
+#include <kickbanfix>
 
 // login/register settings
 

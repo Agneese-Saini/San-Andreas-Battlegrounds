@@ -1,11 +1,11 @@
 #include <a_samp>
 
-#include "../include/streamer.inc"
-#include "../include/colandreas.inc"
-#include "../include/sscanf2.inc"
-#include "../include/zcmd.inc"
-#include "../include/dialogs.inc"
-#include "../include/easydialog.inc"
+#include <streamer>
+#include <colandreas>
+#include <sscanf2>
+#include <zcmd>
+#include <pawno/include/PreviewModelDialog.inc> // TODO: Fix import path
+#include <easydialog>
 
 // Settings
 enum

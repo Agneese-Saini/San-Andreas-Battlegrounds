@@ -27,3 +27,9 @@ Gamemode inspired from popular deathmatch game Player's Unknown battelgrounds po
 * Now open server.cfg and add "main" in gamemode line like:
 `gamemode0 main`
 * Start your samp-server.exe and enjoy!
+
+## Installation With sampctl
+
+1. Get: `sampctl package get Agneese-Saini/San-Andreas-Battlegrounds`
+2. Install missing `kickbanfix.inc` manually as it's not present as a Package
+3. Run: `sampctl package run`

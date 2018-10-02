@@ -1,6 +1,6 @@
 #include <a_samp>
 
-#include "../include/foreach.inc"
+#include <YSI\y_iterate>
 
 #include "forcefield.pwn"
 #include "inventory.pwn"
